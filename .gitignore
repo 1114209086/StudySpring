@@ -1,0 +1,4 @@
+.settings/
+.git/
+.myeclipse/
+WebRoot/WEB-INF/classes/
