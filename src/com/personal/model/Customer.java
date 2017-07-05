@@ -8,7 +8,7 @@ public class Customer {
 	
 	private  int age;
 	
-	
+	public Customer(){}
 
 	public Customer(int custId, String name, int age) {
 		super();

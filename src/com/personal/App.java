@@ -15,7 +15,7 @@ public class App {
 		say.println();
 		
 		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDAO");
-        Customer customer = new Customer(1, "yiibai",29);
+        Customer customer = new Customer(2, "yiibai",29);
         customerDAO.insert(customer);
     	
         Customer customer1 = customerDAO.findByCustomerId(1);

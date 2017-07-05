@@ -5,8 +5,13 @@
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.lib.spring31.MYECLIPSE_SPRING31_CORE"/>
-	<classpathentry kind="lib" path="C:/Users/admin/.m2/repository/org/springframework/spring-jdbc/3.1.1.RELEASE/spring-jdbc-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.lib.spring31.MYECLIPSE_SPRING31_CORE">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/admin/.m2/repository/org/springframework/spring-jdbc/3.1.1.RELEASE"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring3.1"/>
 	<classpathentry kind="lib" path="D:/jarhome/mysql-connector-java-5.1.6-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/.m2/repository/org/springframework/spring-dao/2.0/spring-dao-2.0.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
