@@ -5,9 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
@@ -18,27 +20,50 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao{
 
 	@Override
 	public void insert(Customer customer) {
-		String sql = "INSERT INTO CUSTOMER " +
-				"(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
-		getJdbcTemplate().update(sql, new Object[] { customer.getCustId(),
-				customer.getName(),customer.getAge()});
+		String sql = "INSERT INTO CUSTOMER "
+				+ "(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
+		getJdbcTemplate().update(
+				sql,
+				new Object[] { customer.getCustId(), customer.getName(),
+						customer.getAge() });
 	}
 
 	@Override
 	public Customer findByCustomerId(int custId) {
 		String sql = "SELECT * FROM CUSTOMER WHERE CUST_ID = ?";
-		return getJdbcTemplate().query(sql, new Object[]{custId}, new RowMapper<Customer>(){
-			 
-	        public Customer mapRow(ResultSet rs, int index) throws SQLException {
-	            // TODO Auto-generated method stub
-	        	Customer cat = new Customer();
-	            cat.setCustId(rs.getInt("CUST_ID"));
-	            cat.setName(rs.getString("NAME"));
-	            cat.setAge(rs.getInt("AGE"));
-	            return cat;
-	        }}).get(0);
-		
-//	private DataSource dataSource;
+		return getJdbcTemplate().query(sql, new Object[] { custId },
+				new RowMapper<Customer>() {
+
+					public Customer mapRow(ResultSet rs, int index)
+							throws SQLException {
+						// TODO Auto-generated method stub
+						Customer cat = new Customer();
+						cat.setCustId(rs.getInt("CUST_ID"));
+						cat.setName(rs.getString("NAME"));
+						cat.setAge(rs.getInt("AGE"));
+						return cat;
+					}
+				}).get(0);
+
+	}
+	@Override
+	public List<Customer> findAllCustomers(){
+		String sql = "SELECT * FROM CUSTOMER";
+		List<Customer> list = getJdbcTemplate().query(sql, new RowMapper<Customer>() {
+
+					public Customer mapRow(ResultSet rs, int index)
+							throws SQLException {
+						// TODO Auto-generated method stub
+						Customer cat = new Customer();
+						cat.setCustId(rs.getInt("CUST_ID"));
+						cat.setName(rs.getString("NAME"));
+						cat.setAge(rs.getInt("AGE"));
+						return cat;
+					}
+				});
+		return list;
+	}
+	//	private DataSource dataSource;
 //	
 //	public void setDataSource(DataSource dataSource){
 //		this.dataSource = dataSource;
@@ -103,5 +128,4 @@ public class CustomerDaoImpl extends JdbcDaoSupport implements CustomerDao{
 //			}
 //		}
 //	}	
-	}
 }
