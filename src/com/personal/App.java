@@ -43,6 +43,7 @@ public class App {
 		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDAOSimple");
 
 		System.out.println(customerDAO.findByCustomerId(2));
+		System.out.println(customerDAO.findAllCustomers());
 	}
 
 }

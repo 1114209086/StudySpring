@@ -24,7 +24,7 @@ public class CustomerDaoImplUseSimpleJdbcTemplate extends SimpleJdbcDaoSupport
 		String sql = "SELECT * FROM CUSTOMER WHERE CUST_ID = ?";
 
 		Customer customer = getSimpleJdbcTemplate().queryForObject(sql,
-				ParameterizedBeanPropertyRowMapper.newInstance(Customer.class), custId);
+				new CustomerRowMapper(), custId);
 		return customer;
 	}
 
@@ -39,8 +39,10 @@ public class CustomerDaoImplUseSimpleJdbcTemplate extends SimpleJdbcDaoSupport
 
 	@Override
 	public List<Customer> findAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM CUSTOMER";
+		List<Customer> customersList = getSimpleJdbcTemplate().query(sql,
+				ParameterizedBeanPropertyRowMapper.newInstance(Customer.class));
+		return customersList;
 	}
 
 	@Override
