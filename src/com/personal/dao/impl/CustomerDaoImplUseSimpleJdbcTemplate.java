@@ -62,8 +62,7 @@ public class CustomerDaoImplUseSimpleJdbcTemplate extends SimpleJdbcDaoSupport
 
 	@Override
 	public void insertBatchSQL(String sql) {
-		// TODO Auto-generated method stub
-
+		getJdbcTemplate().batchUpdate(new String[] { sql });
 	}
 
 }
