@@ -1,9 +1,12 @@
 package com.personal.dao.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
 
 import com.personal.dao.CustomerDao;
@@ -15,7 +18,7 @@ public class CustomerDaoImplParamterBind extends SimpleJdbcDaoSupport implements
 
 	@Override
 	public void insert(Customer customer) {
-		String sql = "insert into customer (cust_id,name,age) values (:custId, :name, :age)";
+		String sql = "INSERT INTO CUSTOMER (CUST_ID,NAME,AGE) VALUES (:custId, :name, :age)";
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("custId", customer.getCustId());
 		parameters.put("name", customer.getName());
@@ -37,8 +40,13 @@ public class CustomerDaoImplParamterBind extends SimpleJdbcDaoSupport implements
 	}
 
 	@Override
-	public void insertBatch(List<Customer> list) {
-		// TODO Auto-generated method stub
+	public void insertBatch(List<Customer> customers) {
+		String sql = "INSERT INTO CUSTOMER (CUST_ID,NAME,AGE) VLAUES (:custId, :name, :age)";
+		List<SqlParameterSource> parameter = new ArrayList<SqlParameterSource>();
+		for (Customer customer : customers) {
+			parameter.add(new BeanPropertySqlParameterSource(customer));
+		}
+		getSimpleJdbcTemplate().batchUpdate(sql, parameter.toArray(new SqlParameterSource[0]));
 
 	}
 
