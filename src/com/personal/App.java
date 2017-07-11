@@ -26,24 +26,23 @@ public class App {
 //		System.out.println(customer1);
 //		System.out.println(customerDAO.findAllCustomers());
 //
-//		Customer customer2 = new Customer(7, "yiibai1", 21);
-//		Customer customer3 = new Customer(8, "yiibai2", 22);
-//		Customer customer4 = new Customer(9, "yiibai3", 23);
-//
-//		List<Customer> customers = new ArrayList<Customer>();
-//		customers.add(customer2);
-//		customers.add(customer3);
-//		customers.add(customer4);
-//
-//		customerDAO.insertBatch(customers);
 //
 //		String sql = "UPDATE CUSTOMER SET NAME ='BATCHUPDATE'";
 //		customerDAO.insertBatchSQL(sql);
 
 		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDAOSimple");
+		Customer customer2 = new Customer(10, "yiibai1", 21);
+		Customer customer3 = new Customer(11, "yiibai2", 22);
+		Customer customer4 = new Customer(12, "yiibai3", 23);
 
-		System.out.println(customerDAO.findByCustomerId(2));
-		System.out.println(customerDAO.findAllCustomers());
+		List<Customer> customers = new ArrayList<Customer>();
+		customers.add(customer2);
+		customers.add(customer3);
+		customers.add(customer4);
+
+		customerDAO.insertBatch(customers);
+//		System.out.println(customerDAO.findByCustomerId(2));
+//		System.out.println(customerDAO.findAllCustomers());
 	}
 
 }

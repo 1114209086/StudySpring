@@ -1,5 +1,6 @@
 package com.personal.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.jdbc.core.simple.ParameterizedBeanPropertyRowMapper;
@@ -46,8 +47,16 @@ public class CustomerDaoImplUseSimpleJdbcTemplate extends SimpleJdbcDaoSupport
 	}
 
 	@Override
-	public void insertBatch(List<Customer> list) {
-		// TODO Auto-generated method stub
+	public void insertBatch(List<Customer> customers) {
+		String sql = "INSERT INTO CUSTOMER (CUST_ID,NAME,AGE) VALUE (?,?,?)";
+
+		List<Object[]> parameters = new ArrayList<Object[]>();
+
+		for (Customer customer : customers) {
+			parameters.add(new Object[] { customer.getCustId(),
+					customer.getName(), customer.getAge() });
+		}
+		getSimpleJdbcTemplate().batchUpdate(sql, parameters);
 
 	}
 
