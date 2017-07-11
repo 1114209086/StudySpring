@@ -26,4 +26,8 @@
 	<bean id="customerDAOSimple" class="com.personal.dao.impl.CustomerDaoImplUseSimpleJdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	<bean id="customerDaoImplParamterBind" class="com.personal.dao.impl.CustomerDaoImplParamterBind">
+		<property name="dataSource" ref="dataSource" />
+	</bean>	
+	
 </beans>

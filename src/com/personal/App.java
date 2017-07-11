@@ -30,8 +30,8 @@ public class App {
 //		String sql = "UPDATE CUSTOMER SET NAME ='BATCHUPDATE'";
 //		customerDAO.insertBatchSQL(sql);
 
-		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDAOSimple");
-//		Customer customer2 = new Customer(10, "yiibai1", 21);
+		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDaoImplParamterBind");
+		Customer customer2 = new Customer(13, "yiibai1", 21);
 //		Customer customer3 = new Customer(11, "yiibai2", 22);
 //		Customer customer4 = new Customer(12, "yiibai3", 23);
 //
@@ -40,9 +40,9 @@ public class App {
 //		customers.add(customer3);
 //		customers.add(customer4);
 
-//		customerDAO.insertBatch(customers);
-		String sql = "UPDATE CUSTOMER SET NAME ='BILL'";
-		customerDAO.insertBatchSQL(sql);
+		customerDAO.insert(customer2);
+//		String sql = "UPDATE CUSTOMER SET NAME ='BILL'";
+//		customerDAO.insertBatchSQL(sql);
 //		System.out.println(customerDAO.findByCustomerId(2));
 //		System.out.println(customerDAO.findAllCustomers());
 	}
