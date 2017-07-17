@@ -9,6 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.personal.dao.CustomerDao;
 import com.personal.model.Customer;
 import com.personal.spring.Say;
+import com.personal.spring.Source;
 
 public class App {
 
@@ -30,8 +31,8 @@ public class App {
 //		String sql = "UPDATE CUSTOMER SET NAME ='BATCHUPDATE'";
 //		customerDAO.insertBatchSQL(sql);
 
-		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDaoImplParamterBind");
-		Customer customer2 = new Customer(13, "yiibai1", 21);
+//		CustomerDao customerDAO = (CustomerDao) context.getBean("source");
+//		Customer customer2 = new Customer(14, "yiibai1", 21);
 //		Customer customer3 = new Customer(11, "yiibai2", 22);
 //		Customer customer4 = new Customer(12, "yiibai3", 23);
 //
@@ -40,11 +41,13 @@ public class App {
 //		customers.add(customer3);
 //		customers.add(customer4);
 
-		customerDAO.insert(customer2);
+//		customerDAO.insert(customer2);
 //		String sql = "UPDATE CUSTOMER SET NAME ='BILL'";
 //		customerDAO.insertBatchSQL(sql);
 //		System.out.println(customerDAO.findByCustomerId(2));
 //		System.out.println(customerDAO.findAllCustomers());
+		Source source = (Source) context.getBean("source");
+		source.print();
 	}
 
 }

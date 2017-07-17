@@ -28,6 +28,8 @@
 	</bean>
 	<bean id="customerDaoImplParamterBind" class="com.personal.dao.impl.CustomerDaoImplParamterBind">
 		<property name="dataSource" ref="dataSource" />
-	</bean>	
+	</bean>
 	
+	<bean id="source" class="com.personal.spring.Source" autowire="byName"></bean>
+	<bean id="english" class="com.personal.spring.English"></bean>
 </beans>
