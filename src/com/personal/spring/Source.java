@@ -4,6 +4,10 @@ public class Source {
 
 	private English english;
 
+	public Source(English english){
+		this.english = english;
+	}
+
 	/**
 	 * @return the english
 	 */

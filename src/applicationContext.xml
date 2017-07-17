@@ -30,6 +30,6 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<bean id="source" class="com.personal.spring.Source" autowire="byType"></bean>
+	<bean id="source" class="com.personal.spring.Source" autowire="constructor"></bean>
 <!-- 	<bean id="english" class="com.personal.spring.English"></bean> -->
 </beans>
