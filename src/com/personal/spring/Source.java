@@ -1,13 +1,11 @@
 package com.personal.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Source {
 
 	private English english;
 
-	@Autowired
 	private China china;
 
 	public Source(){
@@ -30,6 +28,19 @@ public class Source {
 		this.english = english;
 	}
 
+	/**
+	 * @return the china
+	 */
+	public China getChina() {
+		return china;
+	}
+	/**
+	 * @param china the china to set
+	 */
+	@Autowired
+	public void setChina(China china) {
+		this.china = china;
+	}
 	public void print(){
 		china.print();
 	}
