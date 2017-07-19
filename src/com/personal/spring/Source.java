@@ -1,6 +1,7 @@
 package com.personal.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Source {
 
@@ -37,6 +38,7 @@ public class Source {
 	/**
 	 * @param china the china to set
 	 */
+	@Qualifier("sc")
 	@Autowired
 	public void setChina(China china) {
 		this.china = china;

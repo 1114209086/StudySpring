@@ -11,6 +11,7 @@
 	</bean>
 	<bean id="en" class="com.personal.spring.English" />
 	<bean id="sc" class="com.personal.spring.China" />
+	<bean id="scA" class="com.personal.spring.China" />
 
 
 	<bean id="dataSource"
