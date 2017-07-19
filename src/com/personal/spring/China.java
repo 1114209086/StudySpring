@@ -7,4 +7,8 @@ public class China implements Local{
 	public void print() {
 		System.out.println("你好！" + name);
 	}
+
+	public void setName(String name){
+		this.name = name;
+	}
 }
