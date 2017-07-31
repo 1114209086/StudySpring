@@ -10,7 +10,7 @@
     <context:annotation-config/>
 	<bean name="sayBean" class="com.personal.spring.Say">
 		<property name="local" >
-			<ref bean="en"></ref>
+			<ref local="sc"></ref>
 		</property>
 	</bean>
 	<bean id="sc" class="com.personal.spring.China" />
