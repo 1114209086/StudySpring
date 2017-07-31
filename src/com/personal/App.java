@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.personal.dao.CustomerDao;
 import com.personal.model.Customer;
 import com.personal.spring.China;
+import com.personal.spring.English;
 import com.personal.spring.Say;
 import com.personal.spring.Source;
 import com.personal.springconfig.BeanContext;
@@ -54,6 +55,8 @@ public class App {
 		ApplicationContext context = new AnnotationConfigApplicationContext(BeanContext.class);
 		China china = (China) context.getBean("china");
 		china.print();
+		English english = (English) context.getBean("english");
+		english.print();
 	}
 
 }
