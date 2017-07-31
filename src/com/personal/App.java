@@ -18,10 +18,10 @@ import com.personal.springconfig.BeanContext;
 public class App {
 
 	public static void main(String[] args) {
-//		ApplicationContext context = new ClassPathXmlApplicationContext(
-//				"applicationContext.xml");
-//		Say say = (Say) context.getBean("sayBean");
-//		say.println();
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"applicationContext.xml");
+		Say say = (Say) context.getBean("sayBean");
+		say.println();
 
 //		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDAO");
 //		 Customer customer = new Customer(3, "yiibai",29);
@@ -52,11 +52,11 @@ public class App {
 //		System.out.println(customerDAO.findAllCustomers());
 //		Source source = (Source) context.getBean("source");
 //		source.print();
-		ApplicationContext context = new AnnotationConfigApplicationContext(BeanContext.class);
-		China china = (China) context.getBean("china");
-		china.print();
-		English english = (English) context.getBean("english");
-		english.print();
+//		ApplicationContext context = new AnnotationConfigApplicationContext(BeanContext.class);
+//		China china = (China) context.getBean("china");
+//		china.print();
+//		English english = (English) context.getBean("english");
+//		english.print();
 	}
 
 }
