@@ -8,12 +8,12 @@
 	<import resource="enBean.xml"/>
 
     <context:annotation-config/>
-	<bean name="sayBean" class="com.personal.spring.Say">
+	<bean name="sayBean" class="com.personal.spring.Say" scope="prototype">
 		<property name="local" >
 			<ref local="sc"></ref>
 		</property>
 	</bean>
-	<bean id="sc" class="com.personal.spring.China" />
+	<bean id="sc" class="com.personal.spring.China" scope="prototype" />
 	<bean id="scA" class="com.personal.spring.China" />
 
 

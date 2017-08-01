@@ -23,6 +23,7 @@ public class App {
 		China china = (China) context.getBean("sc");
 		china.setName("单例");
 		Say say = (Say) context.getBean("sayBean");
+		say.setLocal(china);
 		say.println();
 		Say say2 = (Say) context.getBean("sayBean");
 		say2.println();
