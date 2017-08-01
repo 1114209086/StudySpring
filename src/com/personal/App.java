@@ -20,8 +20,12 @@ public class App {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
+		China china = (China) context.getBean("sc");
+		china.setName("单例");
 		Say say = (Say) context.getBean("sayBean");
 		say.println();
+		Say say2 = (Say) context.getBean("sayBean");
+		say2.println();
 
 //		CustomerDao customerDAO = (CustomerDao) context.getBean("customerDAO");
 //		 Customer customer = new Customer(3, "yiibai",29);
